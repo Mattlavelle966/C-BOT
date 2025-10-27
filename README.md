@@ -89,7 +89,8 @@ x86_64-w64-mingw32-gcc mc_testbot.c -o mc_bot.exe -luser32
 
 # 5️⃣ Run the bot inside your Wine prefix (Minecraft must already be running)
 WINEPREFIX=~/.wine-mc wine mc_bot.exe
-
+```
+```
 
 ## Contributing
 
