@@ -59,6 +59,31 @@ Future bindings (Lua) are being considered for cross-language support.
 
 Each key-down and key-up event is faithfully reproduced, ensuring your macro behaves exactly as recorded whether for testing, automation, or accessibility.
 
+
+---
+## Contributing
+
+Contributions are welcome! and appreciated  
+
+
+If you’d like to contribute:
+1. **Fork** the repository  
+2. **Create a new branch** for your feature or fix(recommended)  
+3. **Commit** your changes with clear, descriptive messages  
+4. **Open a pull request** describing what you’ve added or improved  
+
+### Areas of Interest
+- Improving input accuracy and event timing  
+- Expanding mouse integration  
+- Building a cross-platform CLI front-end  
+- Developing a modular library interface for other applications(Currently Underway)  
+- Implement `<stdbool.h>` and replace `int runnning`--
+
+All contributions should follow a clean, minimal C style keep dependencies light and the project portable ideally using the currently included headers if possible.  
+
+Please test any changes under both **Windows** and **Wine** enviroments but atleast **Wine** at the minumum if you expect your PR to be merged.
+
+
 ---
 
 ## Build Instructions
@@ -90,28 +115,4 @@ x86_64-w64-mingw32-gcc mc_testbot.c -o mc_bot.exe -luser32
 # 5️⃣ Run the bot inside your Wine prefix (Minecraft must already be running)
 WINEPREFIX=~/.wine-mc wine mc_bot.exe
 
-```
-```
----
-## Contributing
 
-Contributions are welcome! and appreciated  
-
-
-If you’d like to contribute:
-1. **Fork** the repository  
-2. **Create a new branch** for your feature or fix(recommended)  
-3. **Commit** your changes with clear, descriptive messages  
-4. **Open a pull request** describing what you’ve added or improved  
-
-### Areas of Interest
-- Improving input accuracy and event timing  
-- Expanding mouse integration  
-- Building a cross-platform CLI front-end  
-- Developing a modular library interface for other applications(Currently Underway)  
-- Implement `<stdbool.h>` and replace `int runnning`--
-
-All contributions should follow a clean, minimal C style keep dependencies light and the project portable ideally using the currently included headers if possible.  
-
-Please test any changes under both **Windows** and **Wine** enviroments but atleast **Wine** at the minumum if you expect your PR to be merged.
----
