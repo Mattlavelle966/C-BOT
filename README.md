@@ -77,7 +77,7 @@ If you’d like to contribute:
 - Expanding mouse integration  
 - Building a cross-platform CLI front-end  
 - Developing a modular library interface for other applications(Currently Underway)  
-- Implement `<stdbool.h>` and replace `int runnning`--
+- Implement `<stdbool.h>` and replace `int runnning`  
 
 All contributions should follow a clean, minimal C style keep dependencies light and the project portable ideally using the currently included headers if possible.  
 
