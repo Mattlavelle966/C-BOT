@@ -72,7 +72,7 @@ WINEPREFIX=~/.wine-mc wine keyhook.exe
 
  
 
-## 🧩Full Setup: Install, Compile, and Run the macro recorder and the press esc and let the bot do its work.
+## Full Setup: Install, Compile, and Run the macro recorder and the press esc and let the bot do its work.
 
 ```bash
 # 1️⃣ Install required packages (Arch Linux)
@@ -89,9 +89,10 @@ x86_64-w64-mingw32-gcc mc_testbot.c -o mc_bot.exe -luser32
 
 # 5️⃣ Run the bot inside your Wine prefix (Minecraft must already be running)
 WINEPREFIX=~/.wine-mc wine mc_bot.exe
-```
-```
 
+```
+```
+---
 ## Contributing
 
 Contributions are welcome! and appreciated  
@@ -113,4 +114,4 @@ If you’d like to contribute:
 All contributions should follow a clean, minimal C style keep dependencies light and the project portable ideally using the currently included headers if possible.  
 
 Please test any changes under both **Windows** and **Wine** enviroments but atleast **Wine** at the minumum if you expect your PR to be merged.
-
+---
