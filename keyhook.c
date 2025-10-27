@@ -10,6 +10,9 @@ typedef struct {
 
 static KeyEvent events[MAX_EVENTS];
 static size_t count = 0;
+int running = 1;
+
+
 
 // takes a hex integer representing a key e.g w = 0x57
 void press_key(WORD vk) {
@@ -60,15 +63,26 @@ HWND find_minecraft_window(void) {
     return NULL;
 }
 
+
+
+
 //callback function that hooks the windows keyboard input stream 
 LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
+    if (!running)
+        return CallNextHookEx(NULL, nCode, wParam, lParam);
+
     if (nCode == HC_ACTION && count < MAX_EVENTS) {
         KBDLLHOOKSTRUCT *p = (KBDLLHOOKSTRUCT *)lParam;
         
         //cheks if key pressed = VK_ESCAPE = ESC && its a key down event
-        if (p->vkCode == VK_ESCAPE && (wParam == WM_KEYDOWN))
-            PostQuitMessage(0);
+        if (p->vkCode == VK_ESCAPE && (wParam == WM_KEYDOWN)){
+             PostQuitMessage(0);
+             running = 0;
+             printf("Escape pressed - stopping cature.\n");
+             return CallNextHookEx(NULL, nCode, wParam, lParam);
 
+        }
+           
         //load event array/recorder
         printf("[HOOK] vk=0x%02lX %s\n",(unsigned long)p->vkCode,(wParam == WM_KEYDOWN || wParam == WM_SYSKEYDOWN) ? "DOWN" : "UP");
 
