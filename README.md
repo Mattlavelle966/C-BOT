@@ -31,7 +31,7 @@ Current functionality focuses on accurate keyboard event logging and 1:1 playbac
 > Its native Linux workflow, combined with Wine-based background and unfocused window macro automation, allows Windows applications to execute macros without requiring a visible or focused window.
 This enables Wayland users to run background macros on unfocused Wine windows while continuing to use their system normally.
 
-Expect minor bugs or inefficiencies or inconsistencies as this was kinda a rapid prototyping kinda thing, this build is mainly for testing core input hooks and replay accuracy really i just scrambled this together specifically `keyhook.c` but the other files show my learning process.
+Expect minor bugs or inefficiencies or inconsistencies as this was some rather rapid prototyping, this build is mainly for testing core input hooks and replay accuracy really i just scrambled this together specifically `keyhook.c` but the other files show my learning process.
 
 ## Plans
 
