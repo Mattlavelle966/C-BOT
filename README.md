@@ -99,9 +99,15 @@ WINEPREFIX=~/.wine-mc wine keyhook.exe
 
 ## Full Setup: Install, Compile, and Run the macro recorder and the press esc and let the bot do its work.
 
+
+## Note:
+  Minecraft is my chosen test window but in theory it should be able to interact with any windows application.
+
 ```bash
-# 1 Install required packages (Arch Linux)
+# 1 Install required packages (Arch Linux) or validate current installs 
 sudo pacman -S mingw-w64-gcc wine winetricks unzip wget
+  # 1:B Validate current installs
+  pacman -Q | grep -E "(mingw-64-gcc|wine|winetricks|unzip|wget)"
 
 # 2 Create and initialize a new Wine prefix for Minecraft
 WINEPREFIX=~/.wine-mc wineboot --init
