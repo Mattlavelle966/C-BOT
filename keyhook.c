@@ -49,13 +49,13 @@ void hold_key(WORD vk, int duration_ms) {
     printf("Key up\n");
 }
 
-HWND find_minecraft_window(void) {
+HWND find_minecraft_window(char windowName[]) {
     HWND hwnd = GetTopWindow(NULL);
     char title[512];
 
     while (hwnd) {
         GetWindowTextA(hwnd, title, sizeof(title));
-        if (IsWindowVisible(hwnd) && strstr(title, "Minecraft")) {
+        if (IsWindowVisible(hwnd) && strstr(title, windowName)) {
             return hwnd;
         }
         hwnd = GetNextWindow(hwnd, GW_HWNDNEXT);
@@ -99,17 +99,24 @@ LRESULT CALLBACK KeyboardProc(int nCode, WPARAM wParam, LPARAM lParam) {
 int main() {
   //installs winEvent hook to the windows event subsystem
   //begins the win key event hook
+    printf("Initializing input hook\n");
     HHOOK hook = SetWindowsHookEx(WH_KEYBOARD_LL, KeyboardProc, NULL, 0); 
+    printf("Initializing MSG structure\n");
     MSG msg;
-    HWND hwnd = find_minecraft_window();
+ 
+    printf("Locating and initializing window\n");
+    HWND hwnd = find_minecraft_window("Minecraft");
+
     if (!hwnd) {
         printf("Minecraft window not found!\n");
         return 1;
     }
-
+    printf("window found and initialized\n");
+    printf("C-BOT is ready to record your inputs please press escape when complete\n");
   //watches msg for msg to become a filled structure by the event hook    
     while (GetMessage(&msg, NULL, 0, 0)) {}
     printf("Replaying Recorded Events\n");
+    printf("5 seconds to start.\n");
     Sleep(5000);
     for (size_t i = 0; i < count; i++){
         int is_down = (events[i].msg == WM_KEYDOWN || events[i].msg == WM_SYSKEYDOWN);
