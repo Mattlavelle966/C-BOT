@@ -49,7 +49,7 @@ void hold_key(WORD vk, int duration_ms) {
     printf("Key up\n");
 }
 
-HWND find_minecraft_window(char windowName[]) {
+HWND find_window_from_keyword(char windowName[]) {
     HWND hwnd = GetTopWindow(NULL);
     char title[512];
 
