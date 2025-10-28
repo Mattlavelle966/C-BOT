@@ -35,16 +35,16 @@ Expect minor bugs or inefficiencies or inconsistencies as this was some rather r
 
 ## Plans
 
-**Keyboard Integration:**  *Complete*  
+**Keyboard Integration:**  *Working - In Progress*  
 Core keyboard hook, event logging, and replay functionality are fully implemented and tested.
 
 **Mouse Integration:**  *Planned*  
 Next milestone: add low level mouse hook support to record and replay mouse input (clicks, moves, scrolls), completing full input automation.
 
-**CLI Interface:**  *In Progress*  
+**CLI Interface:**  *Planned*  
 A command line interface will allow users to record, save, load, and replay macros directly from the terminal including arguments for prefix selection, background mode, and macro management, the hope is a program like similar to Btop.
 
-**Library Packages:**  *Planned*  
+**Library Packages:**  *In Progress*  
 create a macro system as a lightweight C library for integration into other automation or Wine based scripting tools.  
 Future bindings (Lua) are being considered for cross-language support.
 
