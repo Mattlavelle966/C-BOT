@@ -1,7 +1,7 @@
 # KeyHook Macro Recorder & Runner
 
 A lightweight **macro recorder and playback tool** built in pure C `(keyhook.c)` using the Windows API (via Wine on Arch).  
-It hooks into the global keyboard input stream, records every key press/release event, and can later replay them **exactly 1:1** using our `key_press(WORD)` function built on Windows API `SendInput()`.
+It hooks into the global keyboard input stream, records every key press/release event, and can later replay them using our `key_press(WORD)` function built on Windows API `SendInput()`.
 
 I built this project for fun one day while playing Minecraft. I wanted a bot that could play for me in the background. I’ve experimented with similar ideas before using higher-level languages, but I always wanted to write something lower-level something that as few games as possible could escape.
 
@@ -14,7 +14,7 @@ This bot is intended purely for personal and recreational use. I do not condone 
 
 - Global low-level keyboard hook (`WH_KEYBOARD_LL`)
 - Records **raw virtual key events** as they happen  
-- Replays macros with 1:1 key timing and order  
+- Replays macros with key timing and order  
 - Press **ESC** to stop recording and trigger playback  
 - In-memory event buffer (`KeyEvent` array) no external files needed  
 
@@ -23,7 +23,7 @@ This bot is intended purely for personal and recreational use. I do not condone 
 ##  Work in Progress
 
 This project is still in **early development**.  
-Current functionality focuses on accurate keyboard event logging and 1:1 playback, but several improvements are planned:
+Current functionality focuses on accurate keyboard event logging and playback, but several improvements are planned:
 
 > **Note:**  
 > This project was designed and tested on **Linux** (Arch-based) specifically for **Wayland users** who want to run lightweight Windows automation or macro tools in the background of a **Wayland** environment.  
@@ -43,6 +43,9 @@ Next milestone: add low level mouse hook support to record and replay mouse inpu
 
 **CLI Interface:**  *Planned*  
 A command line interface will allow users to record, save, load, and replay macros directly from the terminal including arguments for prefix selection, background mode, and macro management, the hope is a program like similar to Btop.
+
+**1:1 Macro Continuity**  *Planned*  
+Enable the replay stream of user inputed macros to match 1:1 with original user inputed macros.
 
 **Library Packages:**  *In Progress*  
 create a macro system as a lightweight C library for integration into other automation or Wine based scripting tools.  
